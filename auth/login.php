@@ -17,6 +17,7 @@ if (isset($_SESSION['username'])) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login | Sismontek</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
 <style>
     body {
         font-family: 'Poppins', sans-serif;
@@ -24,67 +25,67 @@ if (isset($_SESSION['username'])) {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        min-height: 100vh;
         margin: 0;
         padding: 15px;
     }
 
     .login-container {
         background-color: #fff;
-        padding: 40px 35px;
-        border-radius: 15px;
-        box-shadow: 0 8px 20px rgba(63, 114, 175, 0.3);
+        padding: 35px 30px;
+        border-radius: 16px;
         width: 100%;
         max-width: 380px;
-        text-align: center;
-        animation: fadeIn 0.8s ease-in-out;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        animation: fadeIn 0.7s ease-in-out;
     }
 
     @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(-20px); }
+        from { opacity: 0; transform: translateY(10px); }
         to { opacity: 1; transform: translateY(0); }
     }
 
     h2 {
+        text-align: center;
         color: #3f72af;
-        margin-bottom: 25px;
         font-weight: 600;
+        margin-bottom: 25px;
     }
 
     .input-group {
         margin-bottom: 18px;
-        text-align: left;
     }
 
     .input-group label {
-        display: block;
         font-weight: 600;
+        font-size: 14px;
         color: #3f72af;
         margin-bottom: 6px;
+        display: block;
     }
 
     .input-group input {
         width: 100%;
-        padding: 10px 12px;
+        padding: 12px;
         border: 2px solid #dbe2ef;
-        border-radius: 8px;
-        font-size: 14px;
-        transition: all 0.3s;
+        border-radius: 10px;
+        font-size: 15px;
+        transition: 0.3s;
     }
 
     .input-group input:focus {
         border-color: #3f72af;
-        outline: none;
         box-shadow: 0 0 5px rgba(63, 114, 175, 0.3);
+        outline: none;
     }
 
     button {
         background-color: #3f72af;
-        color: #fff;
-        border: none;
+        color: white;
         width: 100%;
         padding: 12px;
-        border-radius: 8px;
+        border: none;
+        border-radius: 10px;
         font-size: 16px;
         font-weight: 600;
         cursor: pointer;
@@ -95,36 +96,43 @@ if (isset($_SESSION['username'])) {
         background-color: #2b5d9c;
     }
 
+    .alert {
+        background-color: #f8d7da;
+        color: #842029;
+        padding: 12px;
+        border-radius: 8px;
+        font-size: 14px;
+        margin-bottom: 18px;
+        text-align: center;
+    }
+
     .footer-text {
         margin-top: 15px;
+        text-align: center;
         color: #3f72af;
         font-size: 13px;
     }
 
-    .alert {
-        background-color: #f8d7da;
-        color: #842029;
-        padding: 10px;
-        border-radius: 8px;
-        font-size: 14px;
-        margin-bottom: 15px;
-    }
-
-    /* Responsif */
+    /* RESPONSIVE MOBILE */
     @media (max-width: 480px) {
         .login-container {
-            padding: 25px 20px;
-            width: 100%;
+            padding: 28px 22px;
+            max-width: 100%;
+            border-radius: 12px;
         }
+
         h2 {
             font-size: 20px;
         }
+
         button {
             font-size: 15px;
+            padding: 12px;
         }
     }
 </style>
 </head>
+
 <body>
     <div class="login-container">
         <h2>🔧 Login Sismontek</h2>
@@ -145,12 +153,15 @@ if (isset($_SESSION['username'])) {
                 <label>Username</label>
                 <input type="text" name="username" placeholder="Masukkan username" required>
             </div>
+
             <div class="input-group">
                 <label>Password</label>
                 <input type="password" name="password" placeholder="Masukkan password" required>
             </div>
+
             <button type="submit">Masuk</button>
         </form>
+
         <p class="footer-text">© 2025 Sismontek</p>
     </div>
 </body>
